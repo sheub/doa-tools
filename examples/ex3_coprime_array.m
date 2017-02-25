@@ -1,5 +1,7 @@
 % resolve more uncorrelated sources than the number of array elements using
 % co-prime arrays
+ warning("off", "all")
+ 
 clear(); close all;
 addpath ("C:/Users/user/Documents/Sebastien/HighResolution/doa-tools/estimator")
 addpath ("C:/Users/user/Documents/Sebastien/HighResolution/doa-tools/array")
@@ -41,7 +43,7 @@ sp_mvdr.true_positions = doas;
 plot_sp(sp_mvdr, 'Title', ['Direct MVDR using ' design_cp.name]);
 
 % use sparse recovery
-sp_sparse = sparse_bpdn_1d(R, source_count, design_cp, wavelength, 360, 9, 'Formulation', 'ConstrainedL1');
+sp_sparse = sparse_bpdn_1d(R, source_count, design_cp, wavelength, 360, 9, 'Formulation', 'ConstrainedL2');
 sp_sparse.true_positions = doas;
 plot_sp(sp_sparse, 'Title', 'Sparse Recovery based DOA Estimation');
 
