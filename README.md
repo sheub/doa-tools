@@ -15,10 +15,6 @@ related to array signal processing.
 * Several useful utility functions, including a simple progress bar to display
   the simulation progress.
 
-## Getting started
-
-Please refer to the examples [here](exampls/).
-
 ## License
 
 The source code is released under the [MIT](LICENSE.md) license.
